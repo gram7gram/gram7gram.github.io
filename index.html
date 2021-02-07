@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game server converter</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    .root {
+      display:  flex;
+      flex: 2;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      height: 100vh;
+    }
+
+    .icon {
+      width: 100%;
+      height: auto;
+      max-width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <div class="root">
+
+    <div style="flex: 1">
+      <h2>Input</h2>
+      <img src="img/excel.png" alt="Excel" class="icon" />
+
+      <input type="file" id="upload" />
+    </div>
+
+    <div style="flex: 1">
+      <h2>Output</h2>
+      <img src="img/json.svg" alt="Json" class="icon" />
+
+      <ul id="output"></ul>
+    </div>
+
+
+  </div>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js" integrity="sha512-wBcFatf7yQavHQWtf4ZEjvtVz4XkYISO96hzvejfh18tn3OrJ3sPBppH0B6q/1SHB4OKHaNNUKqOmsiTGlOM/g==" crossorigin="anonymous"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
