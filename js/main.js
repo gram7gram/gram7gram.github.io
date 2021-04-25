@@ -93,6 +93,34 @@ const parseRanks = (sheet) => {
   }
 }
 
+const parseCharactersInfo = (sheet) => {
+
+  const json = XLSX.utils.sheet_to_json(sheet, {
+    range: sheet['!ref']
+  })
+
+  const data = json.map(cleanRow)
+
+  return {
+    total: data.length,
+    data,
+  }
+}
+
+const parseLvlUp = (sheet) => {
+
+  const json = XLSX.utils.sheet_to_json(sheet, {
+    range: sheet['!ref']
+  })
+
+  const data = json.map(cleanRow)
+
+  return {
+    total: data.length,
+    data,
+  }
+}
+
 const parse = (buffer) => {
 
   let workbook = XLSX.read(buffer, { type: 'buffer' })
@@ -102,7 +130,9 @@ const parse = (buffer) => {
     'Strings': parseStrings,
     'Experience and Gold': parseExpGold,
     'Achievements': parseAchievements,
-    'Ranks': parseRanks,
+    'Ranks And Game': parseRanks,
+    'Characters_info': parseCharactersInfo,
+    'LvlUp': parseLvlUp,
   }
 
   const values = {}
