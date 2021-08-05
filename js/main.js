@@ -35,20 +35,6 @@ const parseItems = (sheet) => {
   }
 }
 
-const parseStrings = (sheet) => {
-
-  const json = XLSX.utils.sheet_to_json(sheet, {
-    range: sheet['!ref']
-  })
-
-  const data = json.map(cleanRow)
-
-  return {
-    total: data.length,
-    data,
-  }
-}
-
 const parseExpGold = (sheet) => {
 
   const end = sheet['!ref'].split(':')[1]
@@ -65,49 +51,7 @@ const parseExpGold = (sheet) => {
   }
 }
 
-const parseAchievements = (sheet) => {
-
-  const json = XLSX.utils.sheet_to_json(sheet, {
-    range: sheet['!ref']
-  })
-
-  const data = json.map(cleanRow)
-
-  return {
-    total: data.length,
-    data,
-  }
-}
-
-const parseRanks = (sheet) => {
-
-  const json = XLSX.utils.sheet_to_json(sheet, {
-    range: sheet['!ref']
-  })
-
-  const data = json.map(cleanRow)
-
-  return {
-    total: data.length,
-    data,
-  }
-}
-
-const parseCharactersInfo = (sheet) => {
-
-  const json = XLSX.utils.sheet_to_json(sheet, {
-    range: sheet['!ref']
-  })
-
-  const data = json.map(cleanRow)
-
-  return {
-    total: data.length,
-    data,
-  }
-}
-
-const parseLvlUp = (sheet) => {
+const parseAnySheet = (sheet) => {
 
   const json = XLSX.utils.sheet_to_json(sheet, {
     range: sheet['!ref']
@@ -127,12 +71,16 @@ const parse = (buffer) => {
 
   const handlers = {
     'Item Stats': parseItems,
-    'Strings': parseStrings,
+    'Strings': parseAnySheet,
     'Experience and Gold': parseExpGold,
-    'Achievements': parseAchievements,
-    'Ranks And Game': parseRanks,
-    'Characters_info': parseCharactersInfo,
-    'LvlUp': parseLvlUp,
+    'Achievements': parseAnySheet,
+    'Ranks': parseAnySheet,
+    'Characters_info': parseAnySheet,
+    'LvlUp': parseAnySheet,
+    'ChestReward': parseAnySheet,
+    'TutorialBoxes': parseAnySheet,
+    'BattlePass': parseAnySheet,
+    'Bundles_Shop': parseAnySheet,
   }
 
   const values = {}
