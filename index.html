@@ -35,6 +35,24 @@
       height: auto;
       max-width: 100px;
     }
+
+    .input-column {
+      display: flex;
+      flex: 1;
+      align-items: flex-end;
+      flex-direction: column;
+      padding: 10px;
+      height: 100%;
+    }
+
+    .output-column {
+      display: flex;
+      flex: 1;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 10px;
+      height: 100%;
+    }
   </style>
 </head>
 
@@ -43,14 +61,14 @@
   <!-- Add your site or application content here -->
   <div class="root">
 
-    <div style="flex: 1">
+    <div class="input-column">
       <h2>Input</h2>
       <img src="img/excel.png" alt="Excel" class="icon" />
 
       <input type="file" id="upload" />
     </div>
 
-    <div style="flex: 1">
+    <div class="output-column">
       <h2>Output</h2>
       <img src="img/json.svg" alt="Json" class="icon" />
 
