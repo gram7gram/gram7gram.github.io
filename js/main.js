@@ -81,6 +81,7 @@ const parse = (buffer) => {
     'TutorialBoxes': parseAnySheet,
     'BattlePass': parseAnySheet,
     'Bundles_Shop': parseAnySheet,
+    'InApps': parseAnySheet,
   }
 
   const values = {}
