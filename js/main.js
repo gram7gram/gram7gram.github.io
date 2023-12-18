@@ -83,6 +83,7 @@ const parse = (buffer) => {
     'Bundles_Shop': parseAnySheet,
     'InApps': parseAnySheet,
     'CurrencyConverter': parseAnySheet,
+    'StringsUI': parseAnySheet,
   }
 
   const values = {}
